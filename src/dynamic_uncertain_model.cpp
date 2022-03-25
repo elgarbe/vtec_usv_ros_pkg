@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ros/ros.h"
+#include <ros/console.h>
 #include "geometry_msgs/Pose2D.h"
 #include "geometry_msgs/Vector3.h"
 #include "nav_msgs/Odometry.h"
@@ -31,26 +32,26 @@ public:
 	float Yr;
 	float Nv;
 	float Nr;
-	static const float X_u_dot = -2.25;
-	static const float Y_v_dot = -23.13;
-	static const float Y_r_dot = -1.31;
-	static const float N_v_dot = -16.41;
-	static const float N_r_dot = -2.79;
+	static constexpr float X_u_dot = -2.25;
+	static constexpr float Y_v_dot = -23.13;
+	static constexpr float Y_r_dot = -1.31;
+	static constexpr float N_v_dot = -16.41;
+	static constexpr float N_r_dot = -2.79;
 	float Xuu;
-	static const float Yvv = -99.99;
-	static const float Yvr = -5.49;
-	static const float Yrv = -5.49;
-	static const float Yrr = -8.8;
-	static const float Nvv = -5.49;
-	static const float Nvr = -8.8;
-	static const float Nrv = -8.8;
-	static const float Nrr = -3.49;
+	static constexpr float Yvv = -99.99;
+	static constexpr float Yvr = -5.49;
+	static constexpr float Yrv = -5.49;
+	static constexpr float Yrr = -8.8;
+	static constexpr float Nvv = -5.49;
+	static constexpr float Nvr = -8.8;
+	static constexpr float Nrv = -8.8;
+	static constexpr float Nrr = -3.49;
 
 	//Intrinsic parameters
-	static const float m = 30; //mass
-	static const float Iz = 4.1; //moment of inertia
-	static const float B = 0.41; //centerline-to-centerline separation
-	static const float c = 0.78; //thruster correction factor
+	static constexpr float m = 30; //mass
+	static constexpr float Iz = 4.1; //moment of inertia
+	static constexpr float B = 0.41; //centerline-to-centerline separation
+	static constexpr float c = 0.78; //thruster correction factor
 
 	tf2::Quaternion myQuaternion;
 
@@ -218,6 +219,11 @@ public:
 
 		//Drag matrix
 		D = Dl - Dn;
+
+		// ROS_INFO_STREAM("M: " << M.inverse() );
+		// ROS_INFO_STREAM("Dl: " << Dl);
+		// ROS_INFO_STREAM("Dn: " << -Dn);
+		// ROS_INFO_STREAM("C: " << CRB+CA);
 
 		upsilon_dot =  M.inverse()*(T - (CRB * upsilon) - (CA * nu_r) - (D * nu_r) + Delta); //acceleration vector [u' v' r']
         //upsilon_dot =  M.inverse()*(T - (C * upsilon) - (D * upsilon) + Delta); //acceleration vector [u' v' r']

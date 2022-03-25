@@ -21,7 +21,7 @@ public:
   float v;
   float r;
 
-  static const float time_step = 0.01;
+  static constexpr float time_step = 0.01;
 
   int testing;
   int arduino;
@@ -40,21 +40,21 @@ public:
   //Model pysical parameters
   float Xu;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 1.0;//0.78;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 1.0;//0.78;
 
   //Controller gains
-  static const float kp_u = 1.1;
-  static const float kd_u = 0.1;
-  static const float ki_u = 0.2;
-  static const float kp_psi = 0.8;
-  static const float kd_psi = 3;
+  static constexpr float kp_u = 1.1;
+  static constexpr float kd_u = 0.1;
+  static constexpr float ki_u = 0.2;
+  static constexpr float kp_psi = 0.8;
+  static constexpr float kd_psi = 3;
 
   float o_dot_dot;
   float o_dot;
@@ -62,9 +62,9 @@ public:
   float o_last;
   float o_dot_last;
   float o_dot_dot_last;
-  static const float f1 = 2;
-  static const float f2 = 2;
-  static const float f3 = 2;
+  static constexpr float f1 = 2;
+  static constexpr float f2 = 2;
+  static constexpr float f3 = 2;
 
   float f_dot_dot;
   float f_dot;
@@ -72,9 +72,9 @@ public:
   float f_last;
   float f_dot_last;
   float f_dot_dot_last;
-  static const float g1 = 2;
-  static const float g2 = 2;
-  static const float g3 = 2;
+  static constexpr float g1 = 2;
+  static constexpr float g2 = 2;
+  static constexpr float g3 = 2;
     
   float Tx;
   float Tz;

@@ -2,11 +2,11 @@
 
     <node name="boat_tf2_broadcaster" type="boat_tf2_broadcaster" pkg="sensors" />
 
-    <node name="dynamic_uncertain_model" type="dynamic_uncertain_model" pkg="sensors" />
+    <node name="dynamic_uncertain_model" type="dynamic_uncertain_model" pkg="sensors" output="screen"/>
 
     <arg name="model" default="$(find sensors)/urdf/boat.urdf"/>
 
     <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="robot_state_publisher_alex" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 </launch>

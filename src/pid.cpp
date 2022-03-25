@@ -21,7 +21,7 @@ public:
   float v;
   float r;
 
-  static const float time_step = 0.01;
+  static constexpr float time_step = 0.01;
 
   int testing;
   int arduino;
@@ -38,8 +38,8 @@ public:
   float psi_d_last;
 
   //Model pysical parameters
-  static const float B = 0.41;
-  static const float c = 1.0;//0.78;
+  static constexpr float B = 0.41;
+  static constexpr float c = 1.0;//0.78;
 
   //Controller gains
   float kp_u;
@@ -54,9 +54,9 @@ public:
   float o_last;
   float o_dot_last;
   float o_dot_dot_last;
-  static const float f1 = 2;
-  static const float f2 = 2;
-  static const float f3 = 2;
+  static constexpr float f1 = 2;
+  static constexpr float f2 = 2;
+  static constexpr float f3 = 2;
 
   float f_dot_dot;
   float f_dot;
@@ -64,9 +64,9 @@ public:
   float f_last;
   float f_dot_last;
   float f_dot_dot_last;
-  static const float g1 = 2;
-  static const float g2 = 2;
-  static const float g3 = 2;
+  static constexpr float g1 = 2;
+  static constexpr float g2 = 2;
+  static constexpr float g3 = 2;
 
   float Tx;
   float Tz;
@@ -89,11 +89,11 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &ProportionalIntegralDerivative::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &ProportionalIntegralDerivative::arduinoCallback, this);
 
-    static const float dkp_u = 80.0;
-    static const float dkd_u = 40.0;
-    static const float dki_u = 50.0;
-    static const float dkp_psi = 45.0;
-    static const float dkd_psi = 45.0;
+    static constexpr float dkp_u = 80.0;
+    static constexpr float dkd_u = 40.0;
+    static constexpr float dki_u = 50.0;
+    static constexpr float dkp_psi = 45.0;
+    static constexpr float dkd_psi = 45.0;
 
     n.param("/pid/kp_u", kp_u, dkp_u);
     n.param("/pid/kd_u", kd_u, dkd_u);

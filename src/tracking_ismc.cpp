@@ -26,7 +26,7 @@ public:
   float v;
   float r;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
 
   int testing;
   int arduino;
@@ -71,17 +71,17 @@ public:
   float Xu;
   float Yv;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float Yvv = -99.99;
-  static const float Nrr = -3.49;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 0.78;
-  static const float l = 0.5;
+  static constexpr float Yvv = -99.99;
+  static constexpr float Nrr = -3.49;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 0.78;
+  static constexpr float l = 0.5;
 
   float f_u;
   float g_u;
@@ -163,18 +163,18 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &AdaptiveSlidingModeControl::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &AdaptiveSlidingModeControl::arduinoCallback, this);
 
-    static const float dKa_x = 1.0;
-    static const float dKa_y = 1.0;
-    static const float dk2_x = 0.5;
-    static const float dk2_y = 0.5;
-    static const float dlambda_x = 0.05;
-    static const float dlambda_y = 0.05;
-    static const float dKa_u = 1.0;
-    static const float dKa_r = 1.0;
-    static const float dk2_u = 1.0;
-    static const float dk2_r = 1.0;
-    static const float dlambda_u = 0.01;
-    static const float dlambda_r = 0.01;
+    static constexpr float dKa_x = 1.0;
+    static constexpr float dKa_y = 1.0;
+    static constexpr float dk2_x = 0.5;
+    static constexpr float dk2_y = 0.5;
+    static constexpr float dlambda_x = 0.05;
+    static constexpr float dlambda_y = 0.05;
+    static constexpr float dKa_u = 1.0;
+    static constexpr float dKa_r = 1.0;
+    static constexpr float dk2_u = 1.0;
+    static constexpr float dk2_r = 1.0;
+    static constexpr float dlambda_u = 0.01;
+    static constexpr float dlambda_r = 0.01;
 
     n.param("/tracking_ismc/Ka_x", Ka_x, dKa_x);
     n.param("/tracking_ismc/Ka_y", Ka_y, dKa_y);

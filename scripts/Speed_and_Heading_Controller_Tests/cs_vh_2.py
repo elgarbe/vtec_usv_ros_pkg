@@ -45,17 +45,9 @@ def main():
         start_time = rospy.Time.now().secs
         while (rospy.Time.now().secs - start_time) <= 5 and (not rospy.is_shutdown()):
             t.desired(0.7,t.reference_heading)
-            if i < 1:
-                t.traj.theta = 1
-                t.d_traj_pub.publish(t.traj)
-            else:
-                t.traj.theta = 2
-                t.d_traj_pub.publish(t.traj)
-            i = i+1
-            time.sleep(0.01)
-        rospy.logwarn("Varying")
-        while (rospy.Time.now().secs - start_time) <= 45 and (not rospy.is_shutdown()):
-            offset += math.pi/2000
+            time.sleep(0.1)
+        while (rospy.Time.now().secs - start_time) <= 500:
+            offset += math.pi/200
             sinewave = 0.4*math.sin(offset)
             t.desired(0.7,t.reference_heading+sinewave)
             time.sleep(0.01)

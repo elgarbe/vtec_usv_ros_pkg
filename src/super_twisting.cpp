@@ -21,7 +21,7 @@ public:
   float v;
   float r;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
 
   int testing;
   int arduino;
@@ -38,14 +38,14 @@ public:
   //Model pysical parameters
   float Xu;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 0.78;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 0.78;
   
   float Tx;
   float Tz;
@@ -84,12 +84,12 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &SuperTwistingControl::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &SuperTwistingControl::arduinoCallback, this);
 
-    static const float dk1_u = 0.8;
-    static const float dk1_psi = 2.0;
-    static const float dk2_u = 0.05;
-    static const float dk2_psi = 0.05;
-    static const float dlambda_u = 0.001;
-    static const float dlambda_psi = 1;
+    static constexpr float dk1_u = 0.8;
+    static constexpr float dk1_psi = 2.0;
+    static constexpr float dk2_u = 0.05;
+    static constexpr float dk2_psi = 0.05;
+    static constexpr float dlambda_u = 0.001;
+    static constexpr float dlambda_psi = 1;
 
     n.param("/super_twisting/k1_u", k1_u, dk1_u);
     n.param("/super_twisting/k1_psi", k1_psi, dk1_psi);
