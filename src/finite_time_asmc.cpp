@@ -20,7 +20,7 @@ public:
   float v;
   float r;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
 
   int testing;
   int arduino;
@@ -68,15 +68,15 @@ public:
   //Model pysical parameters
   float Xu;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float Nrr = -3.49;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 0.78;
+  static constexpr float Nrr = -3.49;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 0.78;
   
   float Tx;
   float Tz;
@@ -138,19 +138,19 @@ public:
     ardu_sub = n.subscribe("arduino", 1000, &AdaptiveSlidingModeControl::arduinoCallback, this);
     start_sub = n.subscribe("/start_prescribed", 1000, &AdaptiveSlidingModeControl::startCallback, this);
 
-    static const float dL1_u = 0.15;
-    static const float dL1_r = 0.15;
-    static const float dK2_u = 0.01;
-    static const float dK2_r = 0.01;
-    static const float dmu_u = 0.1;
-    static const float dmu_r = 0.1;
-    static const float dlambda_u = 0.001;
-    static const float dlambda_r = 0.001;
-    static const float dt_c = 3;
-    static const float dk_u = 0.01;
-    static const float dk_r = 0.02;
-    static const float dKmin_u = 0.01;
-    static const float dKmin_r = 0.01;
+    static constexpr float dL1_u = 0.15;
+    static constexpr float dL1_r = 0.15;
+    static constexpr float dK2_u = 0.01;
+    static constexpr float dK2_r = 0.01;
+    static constexpr float dmu_u = 0.1;
+    static constexpr float dmu_r = 0.1;
+    static constexpr float dlambda_u = 0.001;
+    static constexpr float dlambda_r = 0.001;
+    static constexpr float dt_c = 3;
+    static constexpr float dk_u = 0.01;
+    static constexpr float dk_r = 0.02;
+    static constexpr float dKmin_u = 0.01;
+    static constexpr float dKmin_r = 0.01;
 
     n.param("/finite_time_asmc/L1_u", L1_u, dL1_u);
     n.param("/finite_time_asmc/L1_r", L1_r, dL1_r);

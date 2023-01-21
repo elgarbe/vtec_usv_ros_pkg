@@ -72,9 +72,9 @@ public:
   float o_last;
   float o_dot_last;
   float o_dot_dot_last;
-  static const float f1 = 2;
-  static const float f2 = 2;
-  static const float f3 = 2;
+  static constexpr float f1 = 2;
+  static constexpr float f2 = 2;
+  static constexpr float f3 = 2;
 
   //Controller gains
   float k_u;

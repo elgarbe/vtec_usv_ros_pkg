@@ -22,7 +22,7 @@ public:
   float v;
   float r;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
 
   int testing;
   int arduino;
@@ -74,8 +74,8 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &TrackingLos::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &TrackingLos::arduinoCallback, this);
 
-    static const float dk_U = 0.1;
-    static const float dDelta_L = 1.0;
+    static constexpr float dk_U = 0.1;
+    static constexpr float dDelta_L = 1.0;
 
     n.param("/tracking_los/k_U", k_U, dk_U);
     n.param("/tracking_los/Delta_L", Delta_L, dDelta_L);

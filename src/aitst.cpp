@@ -21,7 +21,7 @@ public:
   float v;
   float r;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
 
   int testing;
   int arduino;
@@ -61,14 +61,14 @@ public:
   //Model pysical parameters
   float Xu;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 0.78;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 0.78;
   float g_u;
   float g_psi;
   float f_u;
@@ -99,9 +99,9 @@ public:
   float o_last;
   float o_dot_last;
   float o_dot_dot_last;
-  static const float f1 = 2;
-  static const float f2 = 2;
-  static const float f3 = 2;
+  static constexpr float f1 = 2;
+  static constexpr float f2 = 2;
+  static constexpr float f3 = 2;
 
   //Controller gains
   float k_u;
@@ -142,21 +142,21 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &AdaptiveSuperTwistingControl::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &AdaptiveSuperTwistingControl::arduinoCallback, this);
 
-    static const float dk_u = 0.4;
-    static const float dk_psi = 0.5;
-    static const float dkmin_u = 0.01;
-    static const float dkmin_psi = 0.01;
-    static const float depsilon_u = 0.01;
-    static const float depsilon_psi = 0.01;
-    static const float dmiu_u = 0.05;
-    static const float dmiu_psi = 0.05;
-    static const float dalpha_u = 0.8;
-    static const float dalpha_psi = 0.8;
-    static const float dbeta_psi = 1.0;
-    static const float dq_u = 3;
-    static const float dq_psi = 3;
-    static const float dp_u = 5;
-    static const float dp_psi = 5;
+    static constexpr float dk_u = 0.4;
+    static constexpr float dk_psi = 0.5;
+    static constexpr float dkmin_u = 0.01;
+    static constexpr float dkmin_psi = 0.01;
+    static constexpr float depsilon_u = 0.01;
+    static constexpr float depsilon_psi = 0.01;
+    static constexpr float dmiu_u = 0.05;
+    static constexpr float dmiu_psi = 0.05;
+    static constexpr float dalpha_u = 0.8;
+    static constexpr float dalpha_psi = 0.8;
+    static constexpr float dbeta_psi = 1.0;
+    static constexpr float dq_u = 3;
+    static constexpr float dq_psi = 3;
+    static constexpr float dp_u = 5;
+    static constexpr float dp_psi = 5;
 
     n.param("/aitst/k_u", k_u, dk_u);
     n.param("/aitst/k_psi", k_psi, dk_psi);

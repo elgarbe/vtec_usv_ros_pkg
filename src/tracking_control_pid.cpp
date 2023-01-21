@@ -26,7 +26,7 @@ public:
   float v;
   float r;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
 
   int testing;
   int arduino;
@@ -56,17 +56,17 @@ public:
   float Xu;
   float Yv;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float Yvv = -99.99;
-  static const float Nrr = -3.49;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 0.78;
-  static const float l = 0.5;
+  static constexpr float Yvv = -99.99;
+  static constexpr float Nrr = -3.49;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 0.78;
+  static constexpr float l = 0.5;
 
   float f_u;
   float g_u;
@@ -119,12 +119,12 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &AdaptiveSlidingModeControl::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &AdaptiveSlidingModeControl::arduinoCallback, this);
 
-    static const float dkp_x = 5.0;
-    static const float dkp_y = 5.0;
-    static const float dkd_x = 2.0;
-    static const float dkd_y = 2.0;
-    static const float dki_x = 0.2;
-    static const float dki_y = 0.2;
+    static constexpr float dkp_x = 5.0;
+    static constexpr float dkp_y = 5.0;
+    static constexpr float dkd_x = 2.0;
+    static constexpr float dkd_y = 2.0;
+    static constexpr float dki_x = 0.2;
+    static constexpr float dki_y = 0.2;
 
     n.param("/tracking_control_pid/kp_x", kp_x, dkp_x);
     n.param("/tracking_control_pid/kp_y", kp_y, dkp_y);

@@ -28,7 +28,7 @@ public:
   float xix;
   float xiy;
 
-  static const float integral_step = 0.01;
+  static constexpr float integral_step = 0.01;
   float sqrt_2;
 
   int testing;
@@ -94,17 +94,17 @@ public:
   float Xu;
   float Yv;
   float Nr;
-  static const float X_u_dot = -2.25;
-  static const float Y_v_dot = -23.13;
-  static const float N_r_dot = -2.79;
+  static constexpr float X_u_dot = -2.25;
+  static constexpr float Y_v_dot = -23.13;
+  static constexpr float N_r_dot = -2.79;
   float Xuu;
-  static const float Yvv = -99.99;
-  static const float Nrr = -3.49;
-  static const float m = 30;
-  static const float Iz = 4.1;
-  static const float B = 0.41;
-  static const float c = 0.78;
-  static const float l = 0.5;
+  static constexpr float Yvv = -99.99;
+  static constexpr float Nrr = -3.49;
+  static constexpr float m = 30;
+  static constexpr float Iz = 4.1;
+  static constexpr float B = 0.41;
+  static constexpr float c = 0.78;
+  static constexpr float l = 0.5;
 
   float f_u;
   float g_u;
@@ -238,27 +238,27 @@ public:
     flag_sub = n.subscribe("/arduino_br/ardumotors/flag", 1000, &AdaptiveSlidingModeControl::flagCallback, this);
     ardu_sub = n.subscribe("arduino", 1000, &AdaptiveSlidingModeControl::arduinoCallback, this);
 
-    static const float dk_x = 0.05;
-    static const float dk_y = 0.05;
-    static const float dkmin_x = 0.01;
-    static const float dkmin_y = 0.01;
-    static const float dk2_x = 0.01;
-    static const float dk2_y = 0.01;
-    static const float dmu_x = 0.05;
-    static const float dmu_y = 0.05;
-    static const float dbeta_x = 1.0;
-    static const float dbeta_y = 1.0;
-    static const float dgamma_x = 0.6;
-    static const float dgamma_y = 0.6;
-    static const float dkappa_x = 0.05;
-    static const float dkappa_y = 0.05;
-    static const float dG1 = 9.0;
-    static const float dG2 = 120.0;
-    static const float dG3 = 150.0;
-    static const float dalpha1 = 0.5;
-    static const float dalpha2 = 4.0;
-    static const float dtc_x = 3.0;
-    static const float dtc_y = 3.0;
+    static constexpr float dk_x = 0.05;
+    static constexpr float dk_y = 0.05;
+    static constexpr float dkmin_x = 0.01;
+    static constexpr float dkmin_y = 0.01;
+    static constexpr float dk2_x = 0.01;
+    static constexpr float dk2_y = 0.01;
+    static constexpr float dmu_x = 0.05;
+    static constexpr float dmu_y = 0.05;
+    static constexpr float dbeta_x = 1.0;
+    static constexpr float dbeta_y = 1.0;
+    static constexpr float dgamma_x = 0.6;
+    static constexpr float dgamma_y = 0.6;
+    static constexpr float dkappa_x = 0.05;
+    static constexpr float dkappa_y = 0.05;
+    static constexpr float dG1 = 9.0;
+    static constexpr float dG2 = 120.0;
+    static constexpr float dG3 = 150.0;
+    static constexpr float dalpha1 = 0.5;
+    static constexpr float dalpha2 = 4.0;
+    static constexpr float dtc_x = 3.0;
+    static constexpr float dtc_y = 3.0;
 
     n.param("/tracking_control_fxteso_antsm/k_x", k_x, dk_x);
     n.param("/tracking_control_fxteso_antsm/k_y", k_y, dk_y);
