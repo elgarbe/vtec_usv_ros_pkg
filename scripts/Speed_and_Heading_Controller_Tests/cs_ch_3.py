@@ -23,7 +23,7 @@ class Test:
         self.d_heading_pub = rospy.Publisher("/guidance/desired_heading", Float64, queue_size=10)
 
     def ref_callback(self, refh):
-        self.reference_heading = refh.theta
+        self.reference_heading = 0.0#refh.theta
 
     def desired(self, speed, heading):
         self.ds = speed
@@ -39,8 +39,8 @@ def main():
         while (rospy.Time.now().secs - start_time) <= 1:
             t.desired(0,t.reference_heading)
             time.sleep(0.01)
-        while (rospy.Time.now().secs - start_time) <= 45:
-            t.desired(-0.5,t.reference_heading)
+        while (rospy.Time.now().secs - start_time) <= 100:
+            t.desired(0.5,t.reference_heading)
             time.sleep(0.01)
         t.desired(0,t.reference_heading)
         t.testing = False
